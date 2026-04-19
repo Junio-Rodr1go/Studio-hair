@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background-color: #fff8f8;
+  color: #2d2d2d;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #fff0f3; }
+::-webkit-scrollbar-thumb { background: #c9a96e; border-radius: 4px; }
+
+.btn-primary {
+  background: linear-gradient(135deg, #c9a96e, #a8843e);
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(201, 169, 110, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #c9a96e;
+  border: 2px solid #c9a96e;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background: #c9a96e;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes toClose {
+
+  0% {
+    width: 20%; 
+  }
+
+  100% {
+    width: 85px;
+  }
+}
+
+@keyframes opacity {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1; 
+  }
+}
+
+@keyframes opacityClose {
+
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0; 
+  }
+}
+
+@keyframes toOpen {
+
+  0% {
+    width: 85px;
+  }
+
+  100% {
+    width: 20%; 
+  }
+}
+
+
+.animate-fade { animation: fadeIn 0.8s ease-out forwards; }
+.animate-left { animation: slideLeft 0.8s ease-out forwards; }
+.animate-right { animation: slideRight 0.8s ease-out forwards; }
+
+@media (max-width: 768px) {
+  .btn-primary, .btn-outline { padding: 12px 24px; font-size: 0.9rem; }
+}
+
+.whatsapp:hover {
+  transform-origin: right center;
+  animation: toOpen 0.5s ease-out forwards;
+}
+
+.whatsapp:hover p {
+  display: inline;
+  animation: opacity 1s ease-out;
+  opacity: 1;
+}
+
+.whatsapp p {
+  opacity: 0;
+  display: none;
+}
+
+.whatsapp:not(:hover) {
+  animation: toClose 0.5s ease-out forwards;
+}
