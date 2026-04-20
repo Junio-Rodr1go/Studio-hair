@@ -34,7 +34,7 @@ function IconZap() {
         <div>
             <div className="whatsapp" style={styles.conteiner}
                 onClick={() => {
-                    window.location.href = 'https://wa.me/18998176206'
+                    window.location.href = 'https://wa.me/18998242518'
                 }}
 
                 onMouseEnter={e => {
